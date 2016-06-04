@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cs-jscript", "cs-jscript\cs-jscript.csproj", "{02586A8A-9546-48D2-B07A-DFC53D26EDC8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cmd-jscript", "cmd-jscript\cmd-jscript.csproj", "{02586A8A-9546-48D2-B07A-DFC53D26EDC8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2694E271-0B2F-4BA8-9BCE-8E0F1AD7EF24}"
 	ProjectSection(SolutionItems) = preProject
