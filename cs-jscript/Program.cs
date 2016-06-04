@@ -10,6 +10,12 @@ namespace orez.jscript {
 
 		}
 
+		/// <summary>
+		/// Run Jscript.NET compiler.
+		/// </summary>
+		/// <param name="jsc">Jscript.NET compiler path.</param>
+		/// <param name="inp">Input script file path.</param>
+		/// <param name="outp">Output binary file path.</param>
 		private static void Compile(string jsc, string inp, string outp) {
 			var i = new ProcessStartInfo(jsc, "/nologo /out:\""+outp+"\" \""+inp+"\"");
 			i.CreateNoWindow = true;
