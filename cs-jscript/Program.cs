@@ -6,6 +6,11 @@ using System.Text;
 
 namespace orez.jscript {
 	class Program {
+
+		/// <summary>
+		/// Gotta run it all!
+		/// </summary>
+		/// <param name="args">Input arguments.</param>
 		static void Main(string[] args) {
 			var p = GetOpt(args);
 			var jsc = GetJscPath();
