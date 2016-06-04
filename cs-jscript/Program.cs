@@ -1,15 +1,18 @@
 ﻿using System;
 using System.IO;
+using System.Security.Cryptography;
 
 namespace orez.jscript {
 	class Program {
 		static void Main(string[] args) {
 			var jsc = GetJscPath();
-			var jtmp = evar("temp") + "\\0rez\\cs-jscript";
 
 		}
 
-
+		private static string GetOutPath(string file) {
+			var jtmp = evar("temp") + "\\0rez\\cs-jscript";
+			HashAlgorithm algo = HashAlgorithm.Create("MD5");
+		}
 
 		/// <summary>
 		/// Get Jscript.NET Compiler path.
@@ -64,7 +67,6 @@ namespace orez.jscript {
 		private static string evar(string name) {
 			return Environment.GetEnvironmentVariable(name);
 		}
-
 		/// <summary>
 		/// Shortcut to set environment variable.
 		/// </summary>
