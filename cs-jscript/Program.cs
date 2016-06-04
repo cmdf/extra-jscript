@@ -8,6 +8,11 @@ namespace orez.jscript {
 	class Program {
 		static void Main(string[] args) {
 			var p = GetOpt(args);
+			var jsc = GetJscPath();
+			var outp = p.output != null ? p.output : GetOutPath(p.input);
+			if(!File.Exists(outp)) Compile(jsc, p.input, outp);
+			if(p.compile) Console.WriteLine(outp);
+			else Run(outp, p.args);
 		}
 
 		private static void Run(string bin, string args) {
