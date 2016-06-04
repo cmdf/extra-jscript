@@ -31,6 +31,13 @@ namespace orez.jscript {
 			return jsc;
 		}
 
+		private static oParams GetOpt(string[] args) {
+			for(var i=0; i<args.Length; i++) {
+
+			}
+			return null;
+		}
+
 		/// <summary>
 		/// Shortcut to get environment variable.
 		/// </summary>
