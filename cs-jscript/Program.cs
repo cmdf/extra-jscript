@@ -9,16 +9,21 @@ namespace orez.jscript {
 
 		}
 
-		// get jscript.net compiler
+		/// <summary>
+		/// Get Jscript.NET Compiler path.
+		/// </summary>
+		/// <returns>Full path of the compiler.</returns>
 		private static string GetJscPath() {
-			// prepare
-			var jpth = evar("systemroot") + "\\microsoft.net\\framework\\";
-			var jptn = "*jsc.exe";
-			// search jscript.net compiler
+			// check env var
 			var jsc = Environment.GetEnvironmentVariable("JSC_PATH");
 			if(jsc == null) {
+				// prepare
+				var jptn = "*jsc.exe";
+				var jpth = evar("systemroot") + "\\microsoft.net\\framework\\";
+				// srch jscript.net cmplr
 				foreach(var a in Directory.GetFiles(jpth, jptn, SearchOption.AllDirectories))
 					jsc = a;
+				// add env var
 				evar("JSC_PATH", jsc);
 			}
 			return jsc;
