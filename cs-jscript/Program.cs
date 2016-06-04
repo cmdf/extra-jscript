@@ -10,8 +10,10 @@ namespace orez.jscript {
 		}
 
 		private static string GetOutPath(string file) {
+			var aname = "MD5";
 			var jtmp = evar("temp") + "\\0rez\\cs-jscript";
-			HashAlgorithm algo = HashAlgorithm.Create("MD5");
+			HashAlgorithm algo = HashAlgorithm.Create(aname);
+			return BitConverter.ToString(algo.ComputeHash(File.OpenRead(file))).Replace("-", "").ToLower();
 		}
 
 		/// <summary>
