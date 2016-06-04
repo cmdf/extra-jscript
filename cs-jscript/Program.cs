@@ -7,10 +7,13 @@ namespace orez.jscript {
 			// prepare
 			var jpth = evar("systemroot")+"\\microsoft.net\\framework\\";
 			var jtmp = evar("temp") + "\\0rez\\cs-jscript";
+			var jptn = "*jsc.exe";
 			// search jscript.net compiler
 			var JSC_PATH = Environment.GetEnvironmentVariable("JSC_PATH");
 			if(JSC_PATH == null) {
-				foreach(var a in Directory.GetFiles()
+				foreach(var a in Directory.GetFiles(jpth, jptn, SearchOption.AllDirectories)) {
+					JSC_PATH = a;
+				}
 			}
 		}
 
