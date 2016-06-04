@@ -31,6 +31,11 @@ namespace orez.jscript {
 			return jsc;
 		}
 
+		/// <summary>
+		/// Get input options for ojscript.
+		/// </summary>
+		/// <param name="args">Input arguments.</param>
+		/// <returns>Input options.</returns>
 		private static oParams GetOpt(string[] args) {
 			oParams p = new oParams();
 			for(var i=0; i<args.Length; i++) {
