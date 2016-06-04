@@ -11,15 +11,19 @@ namespace orez.jscript {
 			// search jscript.net compiler
 			var JSC_PATH = Environment.GetEnvironmentVariable("JSC_PATH");
 			if(JSC_PATH == null) {
-				foreach(var a in Directory.GetFiles(jpth, jptn, SearchOption.AllDirectories)) {
+				foreach(var a in Directory.GetFiles(jpth, jptn, SearchOption.AllDirectories))
 					JSC_PATH = a;
-				}
 			}
 		}
 
-		// shortcut for get environment variable
+		// shortcut to get environment variable
 		private static string evar(string name) {
 			return Environment.GetEnvironmentVariable(name);
+		}
+
+		// shortcut to set environment variable
+		private static void evar(string name, string value) {
+			Environment.SetEnvironmentVariable(name, value);
 		}
 	}
 }
