@@ -9,6 +9,8 @@ namespace orez.jscript {
 
 		}
 
+
+
 		/// <summary>
 		/// Get Jscript.NET Compiler path.
 		/// </summary>
@@ -29,12 +31,20 @@ namespace orez.jscript {
 			return jsc;
 		}
 
-		// shortcut to get environment variable
+		/// <summary>
+		/// Shortcut to get environment variable.
+		/// </summary>
+		/// <param name="name">It's name.</param>
+		/// <returns>It's value,</returns>
 		private static string evar(string name) {
 			return Environment.GetEnvironmentVariable(name);
 		}
 
-		// shortcut to set environment variable
+		/// <summary>
+		/// Shortcut to set environment variable.
+		/// </summary>
+		/// <param name="name">It's name.</param>
+		/// <param name="value">Tt's value.</param>
 		private static void evar(string name, string value) {
 			Environment.SetEnvironmentVariable(name, value);
 		}
