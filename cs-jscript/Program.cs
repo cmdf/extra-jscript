@@ -12,7 +12,7 @@ namespace orez.jscript {
 		/// </summary>
 		/// <param name="args">Input arguments.</param>
 		static void Main(string[] args) {
-			var p = GetOpt(args);
+			var p = GetOpt(new string[] { "ocolor.cmd", "7", "8" });
 			var jsc = GetJscPath();
 			var outp = p.output != null ? p.output : GetOutPath(p.input);
 			if(!File.Exists(outp)) Compile(jsc, p.input, outp);
@@ -100,7 +100,7 @@ namespace orez.jscript {
 						var s = new StringBuilder();
 						for(int j = i + 1; j < args.Length; j++)
 							s.Append(args[j]).Append(' ');
-						if(s.Length > 0) s = s.Remove(s.Length - 1, s.Length);
+						if(s.Length > 0) s = s.Remove(s.Length - 1, 1);
 						p.args = s.ToString();
 						break;
 				}
