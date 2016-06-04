@@ -15,6 +15,17 @@ namespace orez.jscript {
 					JSC_PATH = a;
 				evar("JSC_PATH", JSC_PATH);
 			}
+
+		}
+
+		private static string GetJscPath() {
+			var JSC_PATH = Environment.GetEnvironmentVariable("JSC_PATH");
+			if(JSC_PATH == null) {
+				foreach(var a in Directory.GetFiles(jpth, jptn, SearchOption.AllDirectories))
+					JSC_PATH = a;
+				evar("JSC_PATH", JSC_PATH);
+			}
+			return JSC_PATH;
 		}
 
 		// shortcut to get environment variable
