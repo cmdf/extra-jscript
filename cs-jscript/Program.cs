@@ -94,6 +94,11 @@ namespace orez.jscript {
 			return p;
 		}
 
+		/// <summary>
+		/// Execute a file that runs in current shell.
+		/// </summary>
+		/// <param name="file">File to run.</param>
+		/// <param name="args">Input arguments.</param>
 		private static void shell(string file, string args) {
 			var i = new ProcessStartInfo(file, args);
 			i.UseShellExecute = false;
