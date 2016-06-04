@@ -14,12 +14,9 @@ namespace orez.jscript {
 			if(p.compile) Console.WriteLine(outp);
 			else Run(outp, p.args);
 		}
-
+	
 		private static void Run(string bin, string args) {
-			var i = new ProcessStartInfo(bin, args);
-			i.UseShellExecute = false;
-			var p = Process.Start(i);
-			p.WaitForExit();
+			shell(bin, args);
 		}
 
 		/// <summary>
