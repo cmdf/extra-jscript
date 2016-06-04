@@ -10,6 +10,13 @@ namespace orez.jscript {
 
 		}
 
+		private static void Run(string bin, string args) {
+			var i = new ProcessStartInfo(bin, args);
+			i.CreateNoWindow = true;
+			var p = Process.Start(i);
+			p.WaitForExit();
+		}
+
 		/// <summary>
 		/// Run Jscript.NET compiler.
 		/// </summary>
