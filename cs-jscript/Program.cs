@@ -14,7 +14,12 @@ namespace orez.jscript {
 			if(p.compile) Console.WriteLine(outp);
 			else Run(outp, p.args);
 		}
-	
+		
+		/// <summary>
+		/// Run binary file with specified arguments.
+		/// </summary>
+		/// <param name="bin">Binary file.</param>
+		/// <param name="args">Input arguments.</param>
 		private static void Run(string bin, string args) {
 			shell(bin, args);
 		}
