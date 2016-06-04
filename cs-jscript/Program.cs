@@ -94,6 +94,13 @@ namespace orez.jscript {
 			return p;
 		}
 
+		private static void shell(string file, string args) {
+			var i = new ProcessStartInfo(file, args);
+			i.UseShellExecute = false;
+			var p = Process.Start(i);
+			p.WaitForExit();
+		}
+
 		/// <summary>
 		/// Shortcut to get environment variable.
 		/// </summary>
