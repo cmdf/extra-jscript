@@ -9,6 +9,11 @@ namespace orez.jscript {
 
 		}
 
+		/// <summary>
+		/// Return default output path for binary, and make sure it exists.
+		/// </summary>
+		/// <param name="file">Input file path.</param>
+		/// <returns>Full path of output binary file.</returns>
 		private static string GetOutPath(string file) {
 			// prepare
 			var aname = "MD5";
