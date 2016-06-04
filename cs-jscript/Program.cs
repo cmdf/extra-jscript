@@ -13,6 +13,7 @@ namespace orez.jscript {
 			if(JSC_PATH == null) {
 				foreach(var a in Directory.GetFiles(jpth, jptn, SearchOption.AllDirectories))
 					JSC_PATH = a;
+				evar("JSC_PATH", JSC_PATH);
 			}
 		}
 
