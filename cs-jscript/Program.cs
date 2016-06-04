@@ -32,10 +32,23 @@ namespace orez.jscript {
 		}
 
 		private static oParams GetOpt(string[] args) {
+			oParams p = new oParams();
 			for(var i=0; i<args.Length; i++) {
-
+				switch(args[i]) {
+					case "--compile":
+					case "-c":
+						p.compile = true;
+						break;
+					case "--output":
+					case "-o":
+						p.output = args[++i];
+						break;
+					default:
+						p.input = args[i];
+						break;
+				}
 			}
-			return null;
+			return p;
 		}
 
 		/// <summary>
