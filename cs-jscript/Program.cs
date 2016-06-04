@@ -14,6 +14,7 @@ namespace orez.jscript {
 			var i = new ProcessStartInfo(bin, args);
 			i.CreateNoWindow = true;
 			var p = Process.Start(i);
+			Console.OpenStandardOutput()
 			p.WaitForExit();
 		}
 
