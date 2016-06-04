@@ -134,7 +134,7 @@ namespace orez.jscript {
 		/// <param name="name">It's name.</param>
 		/// <param name="value">Tt's value.</param>
 		private static void evar(string name, string value) {
-			Environment.SetEnvironmentVariable(name, value);
+			Environment.SetEnvironmentVariable(name, value, EnvironmentVariableTarget.User);
 		}
 	}
 }
