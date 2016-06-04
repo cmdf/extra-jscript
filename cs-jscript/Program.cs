@@ -2,12 +2,12 @@
 using System.IO;
 using System.Diagnostics;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace orez.jscript {
 	class Program {
 		static void Main(string[] args) {
-			var jsc = GetJscPath();
-
+			var p = GetOpt(args);
 		}
 
 		private static void Run(string bin, string args) {
@@ -85,6 +85,11 @@ namespace orez.jscript {
 						break;
 					default:
 						p.input = args[i];
+						var s = new StringBuilder();
+						for(int j = i + 1; j < args.Length; j++)
+							s.Append(args[j]).Append(' ');
+						if(s.Length > 0) s = s.Remove(s.Length - 1, s.Length);
+						p.args = s.ToString();
 						break;
 				}
 			}
