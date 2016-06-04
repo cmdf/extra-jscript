@@ -24,10 +24,7 @@ namespace orez.jscript {
 		/// <param name="inp">Input script file path.</param>
 		/// <param name="outp">Output binary file path.</param>
 		private static void Compile(string jsc, string inp, string outp) {
-			var i = new ProcessStartInfo(jsc, "/nologo /out:\""+outp+"\" \""+inp+"\"");
-			i.UseShellExecute = false;
-			var p = Process.Start(i);
-			p.WaitForExit();
+			shell(jsc, "/nologo /out:\"" + outp + "\" \"" + inp + "\"");
 		}
 
 		/// <summary>
