@@ -12,9 +12,8 @@ namespace orez.jscript {
 
 		private static void Run(string bin, string args) {
 			var i = new ProcessStartInfo(bin, args);
-			i.CreateNoWindow = true;
+			i.UseShellExecute = false;
 			var p = Process.Start(i);
-			Console.OpenStandardOutput()
 			p.WaitForExit();
 		}
 
@@ -26,7 +25,7 @@ namespace orez.jscript {
 		/// <param name="outp">Output binary file path.</param>
 		private static void Compile(string jsc, string inp, string outp) {
 			var i = new ProcessStartInfo(jsc, "/nologo /out:\""+outp+"\" \""+inp+"\"");
-			i.CreateNoWindow = true;
+			i.UseShellExecute = false;
 			var p = Process.Start(i);
 			p.WaitForExit();
 		}
