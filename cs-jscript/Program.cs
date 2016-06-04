@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Diagnostics;
 using System.Security.Cryptography;
 
 namespace orez.jscript {
@@ -9,12 +10,19 @@ namespace orez.jscript {
 
 		}
 
+		private static void Compile(string jsc, string inp, string outp) {
+			var i = new ProcessStartInfo(jsc, "/nologo /out:\""+outp+"\" \""+inp+"\"");
+			i.CreateNoWindow = true;
+			var p = Process.Start(i);
+			p.WaitForExit();
+		}
+
 		/// <summary>
 		/// Return default output path for binary, and make sure it exists.
 		/// </summary>
-		/// <param name="file">Input file path.</param>
+		/// <param name="inp">Input file path.</param>
 		/// <returns>Full path of output binary file.</returns>
-		private static string GetOutPath(string file) {
+		private static string GetOutPath(string inp) {
 			// prepare
 			var aname = "MD5";
 			var jtmp = evar("temp") + "\\0rez\\cs-jscript\\";
@@ -22,7 +30,7 @@ namespace orez.jscript {
 			Directory.CreateDirectory(jtmp);
 			// get hash value
 			HashAlgorithm algo = HashAlgorithm.Create(aname);
-			var hash = BitConverter.ToString(algo.ComputeHash(File.OpenRead(file)));
+			var hash = BitConverter.ToString(algo.ComputeHash(File.OpenRead(inp)));
 			hash = hash.Replace("-", "").ToLower();
 			// return full path
       return jtmp+hash+".exe";
