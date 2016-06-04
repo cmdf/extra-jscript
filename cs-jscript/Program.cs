@@ -4,7 +4,8 @@ using System.IO;
 namespace orez.jscript {
 	class Program {
 		static void Main(string[] args) {
-			// prepare
+			var jsc = GetJscPath();
+			var jtmp = evar("temp") + "\\0rez\\cs-jscript";
 
 		}
 
@@ -12,7 +13,6 @@ namespace orez.jscript {
 		private static string GetJscPath() {
 			// prepare
 			var jpth = evar("systemroot") + "\\microsoft.net\\framework\\";
-			var jtmp = evar("temp") + "\\0rez\\cs-jscript";
 			var jptn = "*jsc.exe";
 			// search jscript.net compiler
 			var jsc = Environment.GetEnvironmentVariable("JSC_PATH");
