@@ -34,8 +34,3 @@ Run a Jscript.NET script in Windows Console.
 :: run "ocolor.cmd" with input arguments "yellow black"
 > ojscript ocolor.cmd yellow black
 ```
-
-
-## license
-
-Do you have a Poké ball? That's enough!
