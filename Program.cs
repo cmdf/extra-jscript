@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace orez.jscript {
+namespace App {
 	class Program {
 
 		/// <summary>
@@ -47,7 +47,7 @@ namespace orez.jscript {
 		private static string GetOutPath(string inp) {
 			// prepare
 			var aname = "MD5";
-			var jtmp = evar("temp") + "\\0rez\\cs-jscript\\";
+			var jtmp = evar("temp") + "\\merferry\\extra-jscript\\";
 			// create out directory
 			Directory.CreateDirectory(jtmp);
 			// get hash value
@@ -83,8 +83,8 @@ namespace orez.jscript {
 		/// </summary>
 		/// <param name="args">Input arguments.</param>
 		/// <returns>Input options.</returns>
-		private static oParams GetOpt(string[] args) {
-			oParams p = new oParams();
+		private static EParams GetOpt(string[] args) {
+			EParams p = new EParams();
 			for(var i=0; i<args.Length; i++) {
 				switch(args[i]) {
 					case "--compile":

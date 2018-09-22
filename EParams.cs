@@ -1,5 +1,5 @@
-﻿namespace orez.jscript {
-	class oParams {
+﻿namespace App {
+	class EParams {
 
 		/// <summary>
 		/// Optional. Tells whether the file is only to be compiled, not run.
