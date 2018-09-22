@@ -79,7 +79,7 @@ namespace App {
 		}
 
 		/// <summary>
-		/// Get input options for ojscript.
+		/// Get input options for ejscript.
 		/// </summary>
 		/// <param name="args">Input arguments.</param>
 		/// <returns>Input options.</returns>
